@@ -24,38 +24,131 @@
         }
 
         /* =========================
+           HEADER
+        ========================= */
+
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 40px;
+
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(240, 240, 240, 0.15);
+
+            z-index: 1000;
+        }
+
+        .site-logo {
+            color: #f0f0f0;
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 3px;
+
+            transition: opacity 0.2s ease;
+        }
+
+        .site-logo:hover {
+            opacity: 0.65;
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .site-nav a {
+            position: relative;
+
+            color: #f0f0f0;
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+
+            transition: opacity 0.2s ease;
+        }
+
+        .site-nav a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+
+            width: 0;
+            height: 1px;
+
+            background: #f0f0f0;
+
+            transition: width 0.2s ease;
+        }
+
+        .site-nav a:hover {
+            opacity: 0.8;
+        }
+
+        .site-nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================
            INTERACTIVE HOME
         ========================= */
 
         .interactive-home {
             position: relative;
+
             width: 100%;
             height: 100vh;
             min-height: 650px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             overflow: hidden;
         }
 
         .head-container {
             position: absolute;
+
             left: 50%;
             top: 50%;
+
             transform: translate(-50%, -50%);
 
             width: min(42vw, 520px);
             height: min(65vh, 620px);
 
             z-index: 2;
+
             pointer-events: none;
         }
 
         #head-canvas {
             width: 100%;
             height: 100%;
+
             display: block;
         }
+
 
         /* =========================
            MENU
@@ -63,14 +156,17 @@
 
         .circle-menu {
             position: absolute;
+
             left: 50%;
             top: 50%;
+
             transform: translate(-50%, -50%);
 
             width: min(82vw, 900px);
             height: min(82vh, 800px);
 
             z-index: 5;
+
             pointer-events: none;
         }
 
@@ -87,7 +183,9 @@
             justify-content: center;
 
             background: rgba(18, 18, 18, 0.85);
+
             border: 1px solid #f0f0f0;
+
             color: #f0f0f0;
 
             font-size: 14px;
@@ -95,6 +193,7 @@
             letter-spacing: 2px;
 
             cursor: pointer;
+
             pointer-events: auto;
 
             transition:
@@ -106,10 +205,16 @@
         .menu-button:hover,
         .menu-button:focus {
             background: #f0f0f0;
+
             color: #121212;
-            transform: translate(-50%, -50%) scale(1.05);
+
+            transform:
+                translate(-50%, -50%)
+                scale(1.05);
+
             outline: none;
         }
+
 
         /* =========================
            BUTTON POSITIONS
@@ -145,6 +250,7 @@
             top: 27%;
         }
 
+
         /* =========================
            SECTIONS
         ========================= */
@@ -159,6 +265,7 @@
             margin-bottom: 30px;
         }
 
+
         /* =========================
            RESUME
         ========================= */
@@ -171,18 +278,26 @@
         .resume-frame {
             width: 100%;
             height: 900px;
+
             border: none;
             border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+            box-shadow:
+                0 8px 24px rgba(0, 0, 0, 0.2);
+
             background: white;
         }
 
         .resume-buttons {
             display: flex;
+
             justify-content: center;
+
             gap: 16px;
+
             margin-top: 20px;
         }
+
 
         /* =========================
            PROJECTS
@@ -190,20 +305,28 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(400px, 1fr));
+
             gap: 32px;
+
             align-items: start;
         }
 
         .project-card {
             border: 1px solid #333;
+
             background: #181818;
+
             cursor: pointer;
+
             overflow: hidden;
         }
 
         .project-thumbnail {
             width: 100%;
+
             display: block;
         }
 
@@ -211,11 +334,32 @@
             padding: 20px;
         }
 
+
         /* =========================
            MOBILE
         ========================= */
 
         @media (max-width: 700px) {
+
+            .site-header {
+                height: 60px;
+
+                padding: 0 20px;
+            }
+
+            .site-logo {
+                font-size: 15px;
+            }
+
+            .site-nav {
+                gap: 14px;
+            }
+
+            .site-nav a {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
 
             .interactive-home {
                 min-height: 550px;
@@ -234,6 +378,7 @@
             .menu-button {
                 width: 125px;
                 height: 48px;
+
                 font-size: 11px;
                 letter-spacing: 1.5px;
             }
@@ -266,6 +411,7 @@
                 grid-template-columns: 1fr;
             }
         }
+
     </style>
 
 
@@ -288,13 +434,63 @@
 
 
     <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="site-header">
+
+        <a
+            href="#home"
+            class="site-logo">
+            MK
+        </a>
+
+
+        <nav class="site-nav">
+
+            <a href="#about">
+                ABOUT
+            </a>
+
+            <a href="#projects">
+                PROJECTS
+            </a>
+
+            <a href="#pixel-art">
+                PIXEL ART
+            </a>
+
+            <a href="#music">
+                MUSIC
+            </a>
+
+            <a href="#resume">
+                RESUME
+            </a>
+
+            <a href="#contact">
+                CONTACT
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
          INTERACTIVE HOME
     ========================= -->
 
-    <section class="interactive-home" id="home">
+    <section
+        class="interactive-home"
+        id="home">
 
         <div class="head-container">
-            <canvas id="head-canvas"></canvas>
+
+            <canvas
+                id="head-canvas">
+            </canvas>
+
         </div>
 
 
@@ -303,7 +499,11 @@
             <button
                 class="menu-button"
                 data-direction="top"
-                onclick="document.getElementById('about').scrollIntoView()">
+                onclick="
+                    document
+                    .getElementById('about')
+                    .scrollIntoView()
+                ">
                 ABOUT ME
             </button>
 
@@ -311,7 +511,11 @@
             <button
                 class="menu-button"
                 data-direction="top-right"
-                onclick="document.getElementById('pixel-art').scrollIntoView()">
+                onclick="
+                    document
+                    .getElementById('pixel-art')
+                    .scrollIntoView()
+                ">
                 PIXEL ART
             </button>
 
@@ -319,7 +523,11 @@
             <button
                 class="menu-button"
                 data-direction="bottom-right"
-                onclick="document.getElementById('music').scrollIntoView()">
+                onclick="
+                    document
+                    .getElementById('music')
+                    .scrollIntoView()
+                ">
                 MUSIC
             </button>
 
@@ -327,7 +535,11 @@
             <button
                 class="menu-button"
                 data-direction="bottom"
-                onclick="document.getElementById('contact').scrollIntoView()">
+                onclick="
+                    document
+                    .getElementById('contact')
+                    .scrollIntoView()
+                ">
                 CONTACT
             </button>
 
@@ -335,7 +547,11 @@
             <button
                 class="menu-button"
                 data-direction="bottom-left"
-                onclick="document.getElementById('projects').scrollIntoView()">
+                onclick="
+                    document
+                    .getElementById('projects')
+                    .scrollIntoView()
+                ">
                 PROJECTS
             </button>
 
@@ -343,7 +559,11 @@
             <button
                 class="menu-button"
                 data-direction="top-left"
-                onclick="document.getElementById('resume').scrollIntoView()">
+                onclick="
+                    document
+                    .getElementById('resume')
+                    .scrollIntoView()
+                ">
                 RESUME
             </button>
 
@@ -358,7 +578,10 @@
 
     <section id="about">
 
-        <h2>About Me</h2>
+        <h2>
+            About Me
+        </h2>
+
 
         <div>
 
@@ -368,16 +591,9 @@
                 style="max-width:250px;"
             >
 
-            <p>
-                Computer Science Game Design student at UCSC,
-                passionate about creating engaging and immersive
-                gaming experiences.
-            </p>
 
             <p>
-                I enjoy programming, designing game mechanics,
-                working with AI, and improving player experiences
-                through thoughtful UX design.
+                I'm a Computer Science Game Design student at UCSC, passionate about creating engaging and immersive gaming experiences. My skills include programming, game mechanics design, and user experience optimization.
             </p>
 
         </div>
@@ -391,7 +607,10 @@
 
     <section id="resume">
 
-        <h2>Resume</h2>
+        <h2>
+            Resume
+        </h2>
+
 
         <div class="resume-container">
 
@@ -408,6 +627,7 @@
                     target="_blank">
                     Open Resume
                 </a>
+
 
                 <a
                     href="MatthewKinResume.pdf"
@@ -428,7 +648,10 @@
 
     <section id="pixel-art">
 
-        <h2>Pixel Art</h2>
+        <h2>
+            Pixel Art
+        </h2>
+
 
         <p>
             Pixel art and visual work.
@@ -443,7 +666,9 @@
 
     <section id="projects">
 
-        <h2>Projects</h2>
+        <h2>
+            Projects
+        </h2>
 
 
         <div class="projects-grid">
@@ -467,6 +692,7 @@
                         UniJam Summer 2026
                     </h3>
 
+
                     <p>
                         3rd Fun & Entertainment
                     </p>
@@ -479,6 +705,7 @@
                             creating an engaging gameplay
                             experience.
                         </p>
+
 
                         <a
                             href="#"
@@ -565,7 +792,10 @@
 
     <section id="music">
 
-        <h2>Music</h2>
+        <h2>
+            Music
+        </h2>
+
 
         <p>
             Music and audio projects.
@@ -580,10 +810,13 @@
 
     <section id="contact">
 
-        <h2>Contact</h2>
+        <h2>
+            Contact
+        </h2>
+
 
         <p>
-            Get in touch.
+            TODO
         </p>
 
     </section>
@@ -600,7 +833,7 @@
         ">
 
         <p>
-            © 2026 Matthew Kin
+            footer here
         </p>
 
     </footer>
@@ -613,11 +846,16 @@
     <script type="module">
 
         import * as THREE from "three";
-        import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+
+        import {
+            GLTFLoader
+        } from "three/addons/loaders/GLTFLoader.js";
 
 
         const canvas =
-            document.getElementById("head-canvas");
+            document.getElementById(
+                "head-canvas"
+            );
 
 
         /* =========================
@@ -626,17 +864,23 @@
 
         const renderer =
             new THREE.WebGLRenderer({
+
                 canvas: canvas,
+
                 alpha: true,
+
                 antialias: true
+
             });
 
 
         renderer.setPixelRatio(
+
             Math.min(
                 window.devicePixelRatio,
                 2
             )
+
         );
 
 
@@ -654,12 +898,15 @@
 
         const camera =
             new THREE.OrthographicCamera(
+
                 -4,
                 4,
                 4,
                 -4,
+
                 0.1,
                 100
+
             );
 
 
@@ -687,6 +934,7 @@
                 2
             );
 
+
         scene.add(
             ambientLight
         );
@@ -698,11 +946,13 @@
                 3
             );
 
+
         keyLight.position.set(
             3,
             4,
             5
         );
+
 
         scene.add(
             keyLight
@@ -715,11 +965,13 @@
                 1
             );
 
+
         fillLight.position.set(
             -3,
             1,
             2
         );
+
 
         scene.add(
             fillLight
@@ -735,9 +987,11 @@
 
 
         headPivot.position.set(
+
             0.2,   // X
-            -16,  // Y
+            -16,   // Y
             0      // Z
+
         );
 
 
@@ -753,16 +1007,12 @@
            ROTATION
         ========================= */
 
-        /*
-         * The head's default orientation
-         * faces 90 degrees to the right.
-         */
-
         const baseRotationY =
             -Math.PI / 2;
 
 
         let targetRotationX = 0;
+
         let targetRotationY =
             baseRotationY;
 
@@ -776,7 +1026,9 @@
 
 
         loader.load(
+
             "./models/head.glb",
+
 
             function(gltf) {
 
@@ -790,7 +1042,9 @@
 
                 const box =
                     new THREE.Box3()
-                        .setFromObject(head);
+                        .setFromObject(
+                            head
+                        );
 
 
                 const center =
@@ -800,14 +1054,16 @@
 
 
                 /*
-                 * Move the model so its
+                 * Move model so its
                  * center is at the pivot.
                  */
 
                 head.position.set(
+
                     -center.x,
                     -center.y,
                     -center.z
+
                 );
 
 
@@ -817,7 +1073,9 @@
 
                 const centeredBox =
                     new THREE.Box3()
-                        .setFromObject(head);
+                        .setFromObject(
+                            head
+                        );
 
 
                 const size =
@@ -828,11 +1086,18 @@
 
                 const maxDimension =
                     Math.max(
+
                         size.x,
                         size.y,
                         size.z
+
                     );
 
+
+                /*
+                 * CHANGE THIS TO MAKE
+                 * THE HEAD BIGGER/SMALLER.
+                 */
 
                 const targetSize = 8.5;
 
@@ -842,17 +1107,13 @@
                     maxDimension;
 
 
-                /*
-                 * Model scale stays fixed.
-                 */
-
                 head.scale.setScalar(
                     modelScale
                 );
 
 
                 /*
-                 * The pivot handles rotation.
+                 * Pivot handles rotation.
                  */
 
                 head.rotation.set(
@@ -868,9 +1129,11 @@
 
 
                 headPivot.rotation.set(
+
                     0,
                     baseRotationY,
                     0
+
                 );
 
             },
@@ -882,11 +1145,14 @@
             function(error) {
 
                 console.error(
+
                     "Error loading head.glb:",
                     error
+
                 );
 
             }
+
         );
 
 
@@ -894,7 +1160,9 @@
            LOOK AT BUTTON
         ========================= */
 
-        function lookAtButton(button) {
+        function lookAtButton(
+            button
+        ) {
 
             const buttonRect =
                 button.getBoundingClientRect();
@@ -903,10 +1171,6 @@
             const canvasRect =
                 canvas.getBoundingClientRect();
 
-
-            /*
-             * Button center
-             */
 
             const buttonX =
                 buttonRect.left +
@@ -918,10 +1182,6 @@
                 buttonRect.height / 2;
 
 
-            /*
-             * Canvas center
-             */
-
             const canvasX =
                 canvasRect.left +
                 canvasRect.width / 2;
@@ -932,23 +1192,15 @@
                 canvasRect.height / 2;
 
 
-            /*
-             * Difference between button
-             * and head.
-             */
-
             const dx =
-                buttonX - canvasX;
+                buttonX -
+                canvasX;
 
 
             const dy =
-                buttonY - canvasY;
+                buttonY -
+                canvasY;
 
-
-            /*
-             * Normalize horizontal
-             * and vertical position.
-             */
 
             const normalizedX =
                 dx /
@@ -969,21 +1221,8 @@
 
 
             /*
-             * IMPORTANT:
-             *
-             * The horizontal direction
-             * has been FLIPPED here.
-             *
-             * Previously:
-             *
-             * baseRotationY - normalizedX
-             *
-             * Now:
-             *
-             * baseRotationY + normalizedX
-             *
-             * This makes the head turn
-             * toward the button.
+             * Positive X = right
+             * Negative X = left
              */
 
             targetRotationY =
@@ -1011,19 +1250,27 @@
 
             targetRotationY =
                 THREE.MathUtils.clamp(
+
                     targetRotationY,
+
                     baseRotationY -
                         maxHorizontalTurn,
+
                     baseRotationY +
                         maxHorizontalTurn
+
                 );
 
 
             targetRotationX =
                 THREE.MathUtils.clamp(
+
                     targetRotationX,
+
                     -maxVerticalTilt,
+
                     maxVerticalTilt
+
                 );
 
         }
@@ -1054,10 +1301,13 @@
 
 
         buttons.forEach(
+
             function(button) {
 
                 button.addEventListener(
+
                     "mouseenter",
+
                     function() {
 
                         lookAtButton(
@@ -1065,11 +1315,14 @@
                         );
 
                     }
+
                 );
 
 
                 button.addEventListener(
+
                     "focus",
+
                     function() {
 
                         lookAtButton(
@@ -1077,29 +1330,37 @@
                         );
 
                     }
+
                 );
 
 
                 button.addEventListener(
+
                     "mouseleave",
+
                     function() {
 
                         resetLook();
 
                     }
+
                 );
 
 
                 button.addEventListener(
+
                     "blur",
+
                     function() {
 
                         resetLook();
 
                     }
+
                 );
 
             }
+
         );
 
 
@@ -1118,27 +1379,25 @@
 
 
             if (
+
                 width <= 0 ||
                 height <= 0
+
             ) {
+
                 return;
+
             }
 
 
-            /*
-             * Update renderer.
-             */
-
             renderer.setSize(
+
                 width,
                 height,
                 false
+
             );
 
-
-            /*
-             * Maintain aspect ratio.
-             */
 
             const aspect =
                 width / height;
@@ -1148,7 +1407,8 @@
 
 
             const viewWidth =
-                viewHeight * aspect;
+                viewHeight *
+                aspect;
 
 
             camera.left =
@@ -1172,6 +1432,7 @@
             ========================= */
 
             const referenceWidth = 700;
+
             const referenceHeight = 700;
 
 
@@ -1185,23 +1446,23 @@
                 referenceHeight;
 
 
-            /*
-             * The smaller dimension
-             * determines the scale.
-             */
-
             const responsiveScale =
                 Math.min(
+
                     widthScale,
                     heightScale
+
                 );
 
 
             camera.zoom =
                 THREE.MathUtils.clamp(
+
                     responsiveScale,
+
                     0.55,
                     1.15
+
                 );
 
 
@@ -1215,8 +1476,11 @@
         ========================= */
 
         window.addEventListener(
+
             "resize",
+
             updateCamera
+
         );
 
 
@@ -1236,33 +1500,33 @@
 
             if (headPivot) {
 
-                /*
-                 * Smooth horizontal rotation
-                 */
-
                 headPivot.rotation.y +=
+
                     (
+
                         targetRotationY -
                         headPivot.rotation.y
+
                     ) * 0.08;
 
 
-                /*
-                 * Smooth vertical rotation
-                 */
-
                 headPivot.rotation.x +=
+
                     (
+
                         targetRotationX -
                         headPivot.rotation.x
+
                     ) * 0.08;
 
             }
 
 
             renderer.render(
+
                 scene,
                 camera
+
             );
 
         }
@@ -1279,7 +1543,9 @@
 
     <script>
 
-        function toggleProject(card) {
+        function toggleProject(
+            card
+        ) {
 
             card.classList.toggle(
                 "expanded"
