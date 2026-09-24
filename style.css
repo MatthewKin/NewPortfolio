@@ -39,11 +39,9 @@ img {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
 
-    background: rgba(18, 18, 18, 0.9);
-
+    background: rgba(18, 18, 18, 0.85);
     backdrop-filter: blur(10px);
 
     border-bottom: 1px solid #292929;
@@ -53,136 +51,251 @@ img {
 
 .nav-container {
     max-width: 1200px;
-
     margin: 0 auto;
 
     padding: 18px 30px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 }
 
 .logo {
     font-size: 18px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
 }
 
 .nav-container nav {
     display: flex;
-
     gap: 30px;
 }
 
 .nav-container nav a {
     color: #aaa;
-
     transition: color 0.2s ease;
 }
 
 .nav-container nav a:hover {
-    color: white;
+    color: #fff;
 }
 
 
 /* =========================
-   Hero
+   Interactive Home
 ========================= */
 
-.hero {
-    min-height: 100vh;
+.interactive-home {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    padding: 120px 30px 80px;
+    overflow: hidden;
+
+    padding-top: 70px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1b1b1b 0%,
+            #121212 45%,
+            #0c0c0c 100%
+        );
 }
 
-.hero-content {
-    max-width: 900px;
 
-    text-align: center;
+/* =========================
+   3D Head
+========================= */
+
+.head-container {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(42vw, 520px);
+    height: min(65vh, 620px);
+
+    z-index: 2;
+
+    pointer-events: none;
 }
 
-.hero-small {
-    color: #999;
+#head-canvas {
+    display: block;
 
-    font-size: 14px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
 }
 
-.hero h1 {
-    font-size: clamp(50px, 8vw, 100px);
 
-    line-height: 1;
+/* =========================
+   Circular Menu
+========================= */
 
-    margin-bottom: 30px;
+.circle-menu {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: min(82vw, 900px);
+    height: min(82vw, 900px);
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    pointer-events: none;
 }
 
-.hero h1 span {
-    color: #8ab4f8;
+
+/* Subtle circular guide */
+
+.circle-menu::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 66%;
+    height: 66%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(138, 180, 248, 0.12);
+
+    border-radius: 50%;
+
+    pointer-events: none;
 }
 
-.hero-description {
-    max-width: 650px;
 
-    margin: 0 auto 35px;
+/* =========================
+   Menu Buttons
+========================= */
 
-    color: #aaa;
+.menu-button {
+    position: absolute;
 
-    font-size: 18px;
-}
+    width: 155px;
+    height: 58px;
 
-.hero-buttons {
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
-    gap: 15px;
+    border: 1px solid #444;
 
-    flex-wrap: wrap;
+    background: rgba(20, 20, 20, 0.9);
+
+    color: #f0f0f0;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease,
+        scale 0.25s ease;
 }
 
-.button {
-    display: inline-block;
 
-    padding: 12px 24px;
+/* Hover */
 
-    border-radius: 6px;
-
+.menu-button:hover,
+.menu-button:focus-visible {
     background: #f0f0f0;
 
     color: #121212;
 
-    font-weight: bold;
+    border-color: #f0f0f0;
 
-    transition: transform 0.2s ease,
-                opacity 0.2s ease;
+    box-shadow:
+        0 0 25px rgba(138, 180, 248, 0.25);
+
+    scale: 1.08;
+
+    outline: none;
 }
 
-.button:hover {
-    transform: translateY(-2px);
 
-    opacity: 0.85;
+/* =========================
+   Circular Positions
+========================= */
+
+/*
+    The six buttons form a hexagon
+    around the center head.
+*/
+
+
+.button-top {
+    top: 4%;
+    left: 50%;
+
+    transform: translateX(-50%);
 }
 
-.button.secondary {
-    background: transparent;
 
-    color: #f0f0f0;
+.button-top-right {
+    top: 25%;
+    right: 2%;
 
-    border: 1px solid #444;
+    transform: translateY(-50%);
+}
+
+
+.button-bottom-right {
+    bottom: 25%;
+    right: 2%;
+
+    transform: translateY(50%);
+}
+
+
+.button-bottom {
+    bottom: 4%;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+.button-bottom-left {
+    bottom: 25%;
+    left: 2%;
+
+    transform: translateY(50%);
+}
+
+
+.button-top-left {
+    top: 25%;
+    left: 2%;
+
+    transform: translateY(-50%);
 }
 
 
@@ -196,7 +309,6 @@ img {
 
 .section-container {
     max-width: 1200px;
-
     margin: 0 auto;
 }
 
@@ -218,6 +330,14 @@ img {
     margin-bottom: 50px;
 
     line-height: 1.1;
+}
+
+.section-description {
+    color: #999;
+
+    max-width: 650px;
+
+    font-size: 18px;
 }
 
 
@@ -259,6 +379,55 @@ img {
 
 .about-text p {
     margin-bottom: 20px;
+}
+
+
+/* =========================
+   Resume
+========================= */
+
+.resume-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border-radius: 6px;
+
+    background: #f0f0f0;
+
+    color: #121212;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.85;
+}
+
+.button.secondary {
+    background: transparent;
+
+    color: #f0f0f0;
+
+    border: 1px solid #444;
 }
 
 
@@ -313,7 +482,6 @@ img {
 
 .project-image img {
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
@@ -490,6 +658,77 @@ footer {
         font-size: 14px;
     }
 
+
+    /* Interactive Home */
+
+    .interactive-home {
+        min-height: 650px;
+
+        height: 100svh;
+    }
+
+    .head-container {
+        width: 70vw;
+        height: 55vh;
+    }
+
+    .circle-menu {
+        width: 96vw;
+        height: 96vw;
+
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .circle-menu::before {
+        width: 55%;
+        height: 55%;
+    }
+
+
+    /* Smaller menu buttons */
+
+    .menu-button {
+        width: 115px;
+        height: 45px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .button-top {
+        top: 5%;
+    }
+
+    .button-top-right {
+        top: 25%;
+        right: 0;
+    }
+
+    .button-bottom-right {
+        bottom: 25%;
+        right: 0;
+    }
+
+    .button-bottom {
+        bottom: 5%;
+    }
+
+    .button-bottom-left {
+        bottom: 25%;
+        left: 0;
+    }
+
+    .button-top-left {
+        top: 25%;
+        left: 0;
+    }
+
+
+    /* Sections */
+
     .section {
         padding: 80px 20px;
     }
@@ -507,5 +746,43 @@ footer {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+}
 
+
+/* =========================
+   Very Small Screens
+========================= */
+
+@media (max-width: 450px) {
+
+    .nav-container nav {
+        display: none;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .interactive-home {
+        min-height: 600px;
+    }
+
+    .head-container {
+        width: 75vw;
+        height: 50vh;
+    }
+
+    .circle-menu {
+        width: 100vw;
+        height: 100vw;
+    }
+
+    .menu-button {
+        width: 100px;
+        height: 40px;
+
+        font-size: 9px;
+
+        letter-spacing: 1px;
+    }
 }
