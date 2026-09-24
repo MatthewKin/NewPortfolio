@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Name | Game Designer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                YOUR NAME
+            </a>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                GAME DESIGNER • DEVELOPER • STUDENT
+            </p>
+
+            <h1>
+                Hi, I'm <span>Your Name</span>.
+            </h1>
+
+            <p class="hero-description">
+                I'm a game design student interested in creating
+                engaging and immersive gameplay experiences.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="button">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="button secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section">
+
+        <div class="section-container">
+
+            <p class="section-label">
+                ABOUT ME
+            </p>
+
+            <h2>
+                A little about me
+            </h2>
+
+            <div class="about-content">
+
+                <div class="about-image">
+                    <img
+                        src="images/profile.png"
+                        alt="Profile picture"
+                    >
+                </div>
+
+                <div class="about-text">
+
+                    <p>
+                        I'm a game design student passionate about
+                        creating engaging and immersive gaming
+                        experiences.
+                    </p>
+
+                    <p>
+                        I enjoy working with gameplay programming,
+                        game mechanics, artificial intelligence,
+                        and user experience design.
+                    </p>
+
+                    <p>
+                        I'm always interested in experimenting with
+                        new ideas and learning new technologies.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+
+        <div class="section-container">
+
+            <p class="section-label">
+                PROJECTS
+            </p>
+
+            <h2>
+                Things I've worked on
+            </h2>
+
+            <div class="projects-grid">
+
+
+                <!-- Project 1 -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img
+                            src="images/projects/project1.png"
+                            alt="Project 1"
+                        >
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            GAME PROJECT
+                        </p>
+
+                        <h3>
+                            Project One
+                        </h3>
+
+                        <p>
+                            A short description of the project,
+                            what you created, and what makes it
+                            interesting.
+                        </p>
+
+                        <button
+                            class="project-button"
+                            onclick="toggleProject(this)"
+                        >
+                            View Details
+                        </button>
+
+                        <div class="project-details">
+
+                            <p>
+                                Add more information about the
+                                project here. You can talk about
+                                your contributions, gameplay,
+                                technologies, and development
+                                process.
+                            </p>
+
+                            <div class="project-links">
+
+                                <a href="#" target="_blank">
+                                    Play on itch.io
+                                </a>
+
+                                <a href="#" target="_blank">
+                                    View Source
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 2 -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img
+                            src="images/projects/project2.png"
+                            alt="Project 2"
+                        >
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            GAME AI
+                        </p>
+
+                        <h3>
+                            Project Two
+                        </h3>
+
+                        <p>
+                            A short description of another
+                            project you've worked on.
+                        </p>
+
+                        <button
+                            class="project-button"
+                            onclick="toggleProject(this)"
+                        >
+                            View Details
+                        </button>
+
+                        <div class="project-details">
+
+                            <p>
+                                Describe the technical side of
+                                the project here.
+                            </p>
+
+                            <div class="project-links">
+
+                                <a href="#" target="_blank">
+                                    View Project
+                                </a>
+
+                                <a href="#" target="_blank">
+                                    View Source
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 3 -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img
+                            src="images/projects/project3.png"
+                            alt="Project 3"
+                        >
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            DESIGN PROJECT
+                        </p>
+
+                        <h3>
+                            Project Three
+                        </h3>
+
+                        <p>
+                            A description of another project,
+                            artwork, or design piece.
+                        </p>
+
+                        <button
+                            class="project-button"
+                            onclick="toggleProject(this)"
+                        >
+                            View Details
+                        </button>
+
+                        <div class="project-details">
+
+                            <p>
+                                Add additional project details
+                                here.
+                            </p>
+
+                            <div class="project-links">
+
+                                <a href="#" target="_blank">
+                                    View Project
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+
+        <div class="section-container">
+
+            <p class="section-label">
+                CONTACT
+            </p>
+
+            <h2>
+                Let's connect
+            </h2>
+
+            <p>
+                Interested in my work? You can find me through
+                the links below.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="https://github.com/" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="#" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="mailto:youremail@example.com">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Your Name. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
