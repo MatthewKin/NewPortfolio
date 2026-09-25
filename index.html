@@ -10,6 +10,7 @@
 <title>Matthew Kin - Portfolio</title>
 
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/favicon.png">
 
 <script type="importmap">
 {
@@ -24,30 +25,30 @@
 
 <body>
 
-
 <!-- =========================
      HEADER
 ========================= -->
 
 <header class="site-header">
 
-    <a href="#home" class="site-logo">
-        MK
-    </a>
 
-    <nav class="site-nav">
+<a href="#home" class="site-logo">
+    MK
+</a>
 
-        <a href="#about">ABOUT</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#pixel-art">PIXEL ART</a>
-        <a href="#music">MUSIC</a>
-        <a href="#resume">RESUME</a>
-        <a href="#contact">CONTACT</a>
+<nav class="site-nav">
 
-    </nav>
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#pixel-art">PIXEL ART</a>
+    <a href="#music">MUSIC</a>
+    <a href="#resume">RESUME</a>
+    <a href="#contact">CONTACT</a>
+
+</nav>
+
 
 </header>
-
 
 <!-- =========================
      INTERACTIVE HOME
@@ -55,102 +56,103 @@
 
 <section class="interactive-home" id="home">
 
-    <div class="head-container">
 
-        <canvas id="head-canvas"></canvas>
+<div class="head-container">
 
-    </div>
+    <canvas id="head-canvas"></canvas>
 
-
-    <div class="circle-menu">
-
-        <!-- ABOUT -->
-
-        <button
-            class="menu-button"
-            data-direction="top"
-            onclick="
-                document
-                .getElementById('about')
-                .scrollIntoView({ behavior: 'smooth' })
-            ">
-            ABOUT ME
-        </button>
+</div>
 
 
-        <!-- PROJECTS -->
+<div class="circle-menu">
 
-        <button
-            class="menu-button"
-            data-direction="top-right"
-            onclick="
-                document
-                .getElementById('projects')
-                .scrollIntoView({ behavior: 'smooth' })
-            ">
-            PROJECTS
-        </button>
+    <!-- ABOUT -->
 
-
-        <!-- PIXEL ART -->
-
-        <button
-            class="menu-button"
-            data-direction="bottom-right"
-            onclick="
-                document
-                .getElementById('pixel-art')
-                .scrollIntoView({ behavior: 'smooth' })
-            ">
-            PIXEL ART
-        </button>
+    <button
+        class="menu-button"
+        data-direction="top"
+        onclick="
+            document
+            .getElementById('about')
+            .scrollIntoView({ behavior: 'smooth' })
+        ">
+        ABOUT ME
+    </button>
 
 
-        <!-- MUSIC -->
+    <!-- PROJECTS -->
 
-        <button
-            class="menu-button"
-            data-direction="bottom"
-            onclick="
-                document
-                .getElementById('music')
-                .scrollIntoView({ behavior: 'smooth' })
-            ">
-            MUSIC
-        </button>
-
-
-        <!-- CONTACT -->
-
-        <button
-            class="menu-button"
-            data-direction="bottom-left"
-            onclick="
-                document
-                .getElementById('contact')
-                .scrollIntoView({ behavior: 'smooth' })
-            ">
-            CONTACT
-        </button>
+    <button
+        class="menu-button"
+        data-direction="top-right"
+        onclick="
+            document
+            .getElementById('projects')
+            .scrollIntoView({ behavior: 'smooth' })
+        ">
+        PROJECTS
+    </button>
 
 
-        <!-- RESUME -->
+    <!-- PIXEL ART -->
 
-        <button
-            class="menu-button"
-            data-direction="top-left"
-            onclick="
-                document
-                .getElementById('resume')
-                .scrollIntoView({ behavior: 'smooth' })
-            ">
-            RESUME
-        </button>
+    <button
+        class="menu-button"
+        data-direction="bottom-right"
+        onclick="
+            document
+            .getElementById('pixel-art')
+            .scrollIntoView({ behavior: 'smooth' })
+        ">
+        PIXEL ART
+    </button>
 
-    </div>
+
+    <!-- MUSIC -->
+
+    <button
+        class="menu-button"
+        data-direction="bottom"
+        onclick="
+            document
+            .getElementById('music')
+            .scrollIntoView({ behavior: 'smooth' })
+        ">
+        MUSIC
+    </button>
+
+
+    <!-- CONTACT -->
+
+    <button
+        class="menu-button"
+        data-direction="bottom-left"
+        onclick="
+            document
+            .getElementById('contact')
+            .scrollIntoView({ behavior: 'smooth' })
+        ">
+        CONTACT
+    </button>
+
+
+    <!-- RESUME -->
+
+    <button
+        class="menu-button"
+        data-direction="top-left"
+        onclick="
+            document
+            .getElementById('resume')
+            .scrollIntoView({ behavior: 'smooth' })
+        ">
+        RESUME
+    </button>
+
+</div>
+
 
 </section>
-
 
 <!-- =========================
      ABOUT
@@ -158,84 +160,82 @@
 
 <section id="about" class="section about-section">
 
-    <div class="section-container">
 
-        <div class="section-label">
-            ABOUT ME
+<div class="section-container">
+
+    <div class="section-label">
+        ABOUT ME
+    </div>
+
+    <h2>
+        About Me
+    </h2>
+
+    <div class="about-content">
+
+        <div class="about-image">
+
+            <img
+                src="images/profile.png"
+                alt="Matthew Kin">
+
         </div>
 
-        <h2>
-            About Me
-        </h2>
 
-        <div class="about-content">
+        <div class="about-text">
 
-            <div class="about-image">
+            <p>
+                I'm Matthew Kin, a Computer Science: Game Design student at
+                UCSC with a passion for creating engaging and interactive game
+                experiences.
+            </p>
 
-                <img
-                    src="images/profile.png"
-                    alt="Matthew Kin">
+            <p>
+                I'm especially interested in the intersection of programming
+                and game design, focusing on gameplay systems, mechanics, and
+                player experience. I enjoy figuring out how technical systems
+                can be turned into interesting mechanics that make games feel
+                dynamic and rewarding to play.
+            </p>
 
-            </div>
-
-
-            <div class="about-text">
-
-                <p>
-                    I'm Matthew Kin, a Computer Science: Game Design student at
-                    UCSC with a passion for creating engaging and interactive game
-                    experiences.
-                </p>
-                
-                <p>
-                    I'm especially interested in the intersection of programming
-                    and game design, focusing on gameplay systems, mechanics, and
-                    player experience. I enjoy figuring out how technical systems
-                    can be turned into interesting mechanics that make games feel
-                    dynamic and rewarding to play.
-                </p>
-                
-                <p>
-                    Through both academic and personal projects, I've gained
-                    experience with programming, gameplay development, and game
-                    design. I'm always looking to build on my technical skills,
-                    experiment with new ideas, and create projects that are both
-                    fun to play and interesting to explore.
-                </p>
-                
+            <p>
+                Through both academic and personal projects, I've gained
+                experience with programming, gameplay development, and game
+                design. I'm always looking to build on my technical skills,
+                experiment with new ideas, and create projects that are both
+                fun to play and interesting to explore.
+            </p>
 
 
-                <div class="about-skills">
+            <div class="about-skills">
 
-                    <span class="about-skill">
-                        GAME DESIGN
-                    </span>
+                <span class="about-skill">
+                    GAME DESIGN
+                </span>
 
-                    <span class="about-skill">
-                        PROGRAMMING
-                    </span>
+                <span class="about-skill">
+                    PROGRAMMING
+                </span>
 
-                    <span class="about-skill">
-                        GAME AI
-                    </span>
+                <span class="about-skill">
+                    GAME AI
+                </span>
 
-                    <span class="about-skill">
-                        PIXEL ART
-                    </span>
+                <span class="about-skill">
+                    PIXEL ART
+                </span>
 
-                    <span class="about-skill">
-                        AUDIO DESIGN
-                    </span>
+                <span class="about-skill">
+                    AUDIO DESIGN
+                </span>
 
-                    <span class="about-skill">
-                        GAMEPLAY SYSTEMS
-                    </span>
+                <span class="about-skill">
+                    GAMEPLAY SYSTEMS
+                </span>
 
-                    <span class="about-skill">
-                        UI/UX DESIGN
-                    </span>
-
-                </div>
+                <span class="about-skill">
+                    UI/UX DESIGN
+                </span>
 
             </div>
 
@@ -243,8 +243,10 @@
 
     </div>
 
-</section>
+</div>
 
+
+</section>
 
 <!-- =========================
      PROJECTS
@@ -252,164 +254,317 @@
 
 <section id="projects" class="section projects-section">
 
-    <div class="section-container">
 
-        <div class="section-label">
-            PROJECTS
+<div class="section-container">
+
+    <div class="section-label">
+        PROJECTS
+    </div>
+
+    <h2>
+        Projects
+    </h2>
+
+    <div class="projects-grid">
+
+
+        <!-- =========================
+             PROJECT 1
+        ========================= -->
+
+        <div
+            class="project-card"
+            data-href="hyperwave-drive.html"
+            tabindex="0"
+            role="link"
+            aria-label="View Echoes Of The Ancient project">
+
+            <div class="project-image">
+
+                <img
+                    class="project-thumbnail"
+                    src="images/projects/project1.png"
+                    alt="Project One">
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-type">
+                    GameJam
+                </div>
+
+                <h3>
+                    Hyperwave Drive
+                </h3>
+
+                <p>
+                    MashUp Game Jam 2025
+                    <br>
+                    <strong>
+                        4th Place — Art
+                    </strong>
+                </p>
+
+                <a
+                    class="project-button"
+                    href="hyperwave-drive.html">
+                    VIEW PROJECT
+                </a>
+
+            </div>
+
         </div>
 
-        <h2>
-            Projects
-        </h2>
 
-        <div class="projects-grid">
+        <!-- =========================
+             PROJECT 2
+        ========================= -->
 
+        <div
+            class="project-card"
+            data-href="luminara.html"
+            tabindex="0"
+            role="link"
+            aria-label="View Project Two">
 
-            <!-- =========================
-                 PROJECT 1
-            ========================= -->
+            <div class="project-image">
 
-            <div
-                class="project-card"
-                data-href="echoes-of-the-ancient.html"
-                tabindex="0"
-                role="link"
-                aria-label="View Echoes Of The Ancient project">
-
-                <div class="project-image">
-
-                    <img
-                        class="project-thumbnail"
-                        src="images/projects/project1.png"
-                        alt="Echoes Of The Ancient">
-
-                </div>
-
-                <div class="project-content">
-
-                    <div class="project-type">
-                        GAME JAM / UNIJAM 2026
-                    </div>
-
-                    <h3>
-                        Echoes Of The Ancient
-                    </h3>
-
-                    <p>
-                        UniJam Summer 2026
-                        <br>
-                        <strong>
-                            3rd Place — Fun & Entertainment
-                        </strong>
-                    </p>
-
-                    <a
-                        class="project-button"
-                        href="echoes-of-the-ancient.html">
-                        VIEW PROJECT
-                    </a>
-
-                </div>
+                <img
+                    class="project-thumbnail"
+                    src="images/projects/project2.png"
+                    alt="Project Two">
 
             </div>
 
+            <div class="project-content">
 
-            <!-- =========================
-                 PROJECT 2
-            ========================= -->
-
-            <div
-                class="project-card"
-                data-href="#"
-                tabindex="0"
-                role="link"
-                aria-label="View Project Two">
-
-                <div class="project-image">
-
-                    <img
-                        class="project-thumbnail"
-                        src="images/projects/project2.png"
-                        alt="Project Two">
-
+                <div class="project-type">
+                    GameJam
                 </div>
 
-                <div class="project-content">
+                <h3>
+                    Luminara
+                </h3>
 
-                    <div class="project-type">
-                        PROJECT
-                    </div>
+                <p>
+                    UniJam Summer 2025
+                    <br>
+                    <strong>
+                        4th Place — Overall
+                    </strong>
+                </p>
 
-                    <h3>
-                        Project Two
-                    </h3>
-
-                    <p>
-                        Project description goes here.
-                    </p>
-
-                    <a
-                        class="project-button"
-                        href="#">
-                        VIEW PROJECT
-                    </a>
-
-                </div>
+                <a
+                    class="project-button"
+                    href="luminara.html">
+                    VIEW PROJECT
+                </a>
 
             </div>
-
-
-            <!-- =========================
-                 PROJECT 3
-            ========================= -->
-
-            <div
-                class="project-card"
-                data-href="#"
-                tabindex="0"
-                role="link"
-                aria-label="View Project Three">
-
-                <div class="project-image">
-
-                    <img
-                        class="project-thumbnail"
-                        src="images/projects/project3.png"
-                        alt="Project Three">
-
-                </div>
-
-                <div class="project-content">
-
-                    <div class="project-type">
-                        PROJECT
-                    </div>
-
-                    <h3>
-                        Project Three
-                    </h3>
-
-                    <p>
-                        Project description goes here.
-                    </p>
-
-                    <a
-                        class="project-button"
-                        href="#">
-                        VIEW PROJECT
-                    </a>
-
-                </div>
-
-            </div>
-
 
         </div>
+
+
+        <!-- =========================
+             PROJECT 3
+        ========================= -->
+
+        <div
+            class="project-card"
+            data-href="echoes-of-the-ancient.html"
+            tabindex="0"
+            role="link"
+            aria-label="View Echoes Of The Ancient project">
+
+            <div class="project-image">
+
+                <img
+                    class="project-thumbnail"
+                    src="images/projects/project3.png"
+                    alt="Echoes Of The Ancient">
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-type">
+                    GAME JAM
+                </div>
+
+                <h3>
+                    Echoes Of The Ancient
+                </h3>
+
+                <p>
+                    UniJam Summer 2026
+                    <br>
+                    <strong>
+                        3rd Place — Fun & Entertainment
+                    </strong>
+                </p>
+
+                <a
+                    class="project-button"
+                    href="echoes-of-the-ancient.html">
+                    VIEW PROJECT
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+             PROJECT 4
+        ========================= -->
+
+        <div
+            class="project-card"
+            data-href="now-you-see-it.html"
+            tabindex="0"
+            role="link"
+            aria-label="View Now You See It project">
+
+            <div class="project-image">
+
+                <img
+                    class="project-thumbnail"
+                    src="images/projects/project4.png"
+                    alt="project4">
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-type">
+                    GAME JAM
+                </div>
+
+                <h3>
+                    Now You See it
+                </h3>
+
+                <p>
+                    ZotJam Winter 2026
+                    <br>
+                    <strong>
+                        4th Place — Ambience
+                    </strong>
+                </p>
+
+                <a
+                    class="project-button"
+                    href="now-you-see-it.html">
+                    VIEW PROJECT
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+             PROJECT 5
+        ========================= -->
+
+        <div
+            class="project-card"
+            data-href="deadwired.html"
+            tabindex="0"
+            role="link"
+            aria-label="DEADWIRED project">
+
+            <div class="project-image">
+
+                <img
+                    class="project-thumbnail"
+                    src="images/projects/project5.png"
+                    alt="project5">
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-type">
+                    GAME JAM
+                </div>
+
+                <h3>
+                    DEADWIRED
+                </h3>
+
+                <p>
+                    Pixel GameJam 2025
+                    <br>
+                    <strong>
+                        21st Place - Innovation
+                    </strong>
+                </p>
+
+                <a
+                    class="project-button"
+                    href="deadwired.html">
+                    VIEW PROJECT
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+             PROJECT 6
+        ========================= -->
+
+        <div
+            class="project-card"
+            data-href="openworld.html"
+            tabindex="0"
+            role="link"
+            aria-label="View Project Two">
+
+            <div class="project-image">
+
+                <img
+                    class="project-thumbnail"
+                    src="images/projects/project6.png"
+                    alt="Project Six">
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-type">
+                    Class Project
+                </div>
+
+                <h3>
+                    OpenWorld
+                </h3>
+
+                <p>
+                    aa
+                    <br>
+                    <strong>
+                        a
+                    </strong>
+                </p>
+
+                <a
+                    class="project-button"
+                    href="openworld.html">
+                    VIEW PROJECT
+                </a>
+
+            </div>
+
+        </div>
+
 
     </div>
 
-</section>
+</div>
 
+
+</section>
 
 <!-- =========================
      PIXEL ART
@@ -417,24 +572,25 @@
 
 <section id="pixel-art" class="section pixel-art-section">
 
-    <div class="section-container">
 
-        <div class="section-label">
-            PIXEL ART
-        </div>
+<div class="section-container">
 
-        <h2>
-            Pixel Art
-        </h2>
-
-        <p class="section-description">
-            Pixel art and visual work.
-        </p>
-
+    <div class="section-label">
+        PIXEL ART
     </div>
 
-</section>
+    <h2>
+        Pixel Art
+    </h2>
 
+    <p class="section-description">
+        Pixel art and visual work.
+    </p>
+
+</div>
+
+
+</section>
 
 <!-- =========================
      MUSIC
@@ -442,24 +598,25 @@
 
 <section id="music" class="section music-section">
 
-    <div class="section-container">
 
-        <div class="section-label">
-            MUSIC
-        </div>
+<div class="section-container">
 
-        <h2>
-            Music
-        </h2>
-
-        <p class="section-description">
-            Music and audio projects.
-        </p>
-
+    <div class="section-label">
+        MUSIC
     </div>
 
-</section>
+    <h2>
+        Music
+    </h2>
 
+    <p class="section-description">
+        Music and audio projects.
+    </p>
+
+</div>
+
+
+</section>
 
 <!-- =========================
      RESUME
@@ -467,48 +624,49 @@
 
 <section id="resume" class="section resume-section">
 
-    <div class="section-container">
 
-        <div class="section-label">
-            RESUME
-        </div>
+<div class="section-container">
 
-        <h2>
-            Resume
-        </h2>
+    <div class="section-label">
+        RESUME
+    </div>
 
-        <div class="resume-container">
+    <h2>
+        Resume
+    </h2>
 
-            <iframe
-                class="resume-frame"
-                src="MatthewKinResume.pdf"
-                title="Matthew Kin Resume">
-            </iframe>
+    <div class="resume-container">
 
-            <div class="resume-buttons">
+        <iframe
+            class="resume-frame"
+            src="MatthewKinResume.pdf"
+            title="Matthew Kin Resume">
+        </iframe>
 
-                <a
-                    class="button"
-                    href="MatthewKinResume.pdf"
-                    target="_blank">
-                    Open Resume
-                </a>
+        <div class="resume-buttons">
 
-                <a
-                    class="button secondary"
-                    href="MatthewKinResume.pdf"
-                    download>
-                    Download Resume
-                </a>
+            <a
+                class="button"
+                href="MatthewKinResume.pdf"
+                target="_blank">
+                Open Resume
+            </a>
 
-            </div>
+            <a
+                class="button secondary"
+                href="MatthewKinResume.pdf"
+                download>
+                Download Resume
+            </a>
 
         </div>
 
     </div>
 
-</section>
+</div>
 
+
+</section>
 
 <!-- =========================
      CONTACT
@@ -516,47 +674,67 @@
 
 <section id="contact" class="section contact-section">
 
-    <div class="section-container">
 
-        <div class="section-label">
-            CONTACT
-        </div>
+<div class="section-container">
 
-        <h2>
-            Contact
-        </h2>
+    <div class="section-label">
+        CONTACT
+    </div>
 
-        <p>
-            Feel free to reach out.
-        </p>
+    <h2>
+        Contact
+    </h2>
 
-        <div class="contact-links">
+    <p>
+        Feel free to reach out.
+    </p>
 
-            <a
-                href="https://www.linkedin.com/in/matthew-kin/"
-                target="_blank"
-                rel="noopener noreferrer">
-                LinkedIn
-            </a>
+    <div class="contact-links">
 
-            <a
-                href="https://rustvz.itch.io/"
-                target="_blank"
-                rel="noopener noreferrer">
-                Itch.io
-            </a>
+        <a
+            href="https://www.linkedin.com/in/matthew-kin/"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+        </a>
 
-            <a
-                href="mailto:mattkin101@gmail.com?subject=Portfolio%20Inquiry">
-                Email
-            </a>
+        <a
+            href="https://rustvz.itch.io/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Itch.io
+        </a>
 
-        </div>
+        <a
+            href="mailto:mattkin101@gmail.com?subject=Portfolio%20Inquiry">
+            Email
+        </a>
 
     </div>
 
-</section>
+    <div class="contact-fallback">
 
+        <p>
+            LinkedIn:
+            https://www.linkedin.com/in/matthew-kin/
+        </p>
+
+        <p>
+            Itch.io:
+            https://rustvz.itch.io/
+        </p>
+
+        <p>
+            Email:
+            mattkin101@gmail.com
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
 
 <!-- =========================
      FOOTER
@@ -564,12 +742,13 @@
 
 <footer>
 
-    <p>
-        © 2026 Matthew Kin
-    </p>
+
+<p>
+    © 2026 Matthew Kin
+</p>
+
 
 </footer>
-
 
 <!-- =========================
      CLICKABLE PROJECT CARDS
@@ -661,7 +840,6 @@
     });
 
 </script>
-
 
 <!-- =========================
      THREE.JS
@@ -1237,7 +1415,6 @@
     animate();
 
 </script>
-
 
 </body>
 
