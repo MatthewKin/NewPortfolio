@@ -1,635 +1,501 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<title>Matthew Kin - Portfolio</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<link rel="stylesheet" href="style.css">
 
-        body {
-            margin: 0;
-            background: #121212;
-            color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 70px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 40px;
-
-            background: rgba(18, 18, 18, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-
-            border-bottom: 1px solid rgba(240, 240, 240, 0.15);
-
-            z-index: 1000;
-        }
-
-        .site-logo {
-            color: #f0f0f0;
-            text-decoration: none;
-
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 3px;
-
-            transition: opacity 0.2s ease;
-        }
-
-        .site-logo:hover {
-            opacity: 0.65;
-        }
-
-        .site-nav {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
-
-        .site-nav a {
-            position: relative;
-
-            color: #f0f0f0;
-            text-decoration: none;
-
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-
-            transition: opacity 0.2s ease;
-        }
-
-        .site-nav a::after {
-            content: "";
-
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-
-            width: 0;
-            height: 1px;
-
-            background: #f0f0f0;
-
-            transition: width 0.2s ease;
-        }
-
-        .site-nav a:hover {
-            opacity: 0.8;
-        }
-
-        .site-nav a:hover::after {
-            width: 100%;
-        }
-
-
-        /* =========================
-           INTERACTIVE HOME
-        ========================= */
-
-        .interactive-home {
-            position: relative;
-
-            width: 100%;
-            height: 100vh;
-            min-height: 650px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            overflow: hidden;
-        }
-
-        .head-container {
-            position: absolute;
-
-            left: 50%;
-            top: 50%;
-
-            transform: translate(-50%, -50%);
-
-            width: min(42vw, 520px);
-            height: min(65vh, 620px);
-
-            z-index: 2;
-
-            pointer-events: none;
-        }
-
-        #head-canvas {
-            width: 100%;
-            height: 100%;
-
-            display: block;
-        }
-
-
-        /* =========================
-           MENU
-        ========================= */
-
-        .circle-menu {
-            position: absolute;
-
-            left: 50%;
-            top: 50%;
-
-            transform: translate(-50%, -50%);
-
-            width: min(82vw, 900px);
-            height: min(82vh, 800px);
-
-            z-index: 5;
-
-            pointer-events: none;
-        }
-
-        .menu-button {
-            position: absolute;
-
-            width: 155px;
-            height: 58px;
-
-            transform: translate(-50%, -50%);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: rgba(18, 18, 18, 0.85);
-
-            border: 1px solid #f0f0f0;
-
-            color: #f0f0f0;
-
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 2px;
-
-            cursor: pointer;
-
-            pointer-events: auto;
-
-            transition:
-                background 0.2s ease,
-                color 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .menu-button:hover,
-        .menu-button:focus {
-            background: #f0f0f0;
-
-            color: #121212;
-
-            transform:
-                translate(-50%, -50%)
-                scale(1.05);
-
-            outline: none;
-        }
-
-
-        /* =========================
-           BUTTON POSITIONS
-        ========================= */
-
-        .menu-button[data-direction="top"] {
-            left: 50%;
-            top: 5%;
-        }
-
-        .menu-button[data-direction="top-right"] {
-            left: 88%;
-            top: 27%;
-        }
-
-        .menu-button[data-direction="bottom-right"] {
-            left: 88%;
-            top: 73%;
-        }
-
-        .menu-button[data-direction="bottom"] {
-            left: 50%;
-            top: 95%;
-        }
-
-        .menu-button[data-direction="bottom-left"] {
-            left: 12%;
-            top: 73%;
-        }
-
-        .menu-button[data-direction="top-left"] {
-            left: 12%;
-            top: 27%;
-        }
-
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        section {
-            padding: 100px 8%;
-            min-height: 600px;
-        }
-
-        section h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-        }
-
-
-        /* =========================
-           RESUME
-        ========================= */
-
-        .resume-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .resume-frame {
-            width: 100%;
-            height: 900px;
-
-            border: none;
-            border-radius: 12px;
-
-            box-shadow:
-                0 8px 24px rgba(0, 0, 0, 0.2);
-
-            background: white;
-        }
-
-        .resume-buttons {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 16px;
-
-            margin-top: 20px;
-        }
-
-
-        /* =========================
-           PROJECTS
-        ========================= */
-
-        .projects-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(400px, 1fr));
-
-            gap: 32px;
-
-            align-items: start;
-        }
-
-        .project-card {
-            border: 1px solid #333;
-
-            background: #181818;
-
-            cursor: pointer;
-
-            overflow: hidden;
-        }
-
-        .project-thumbnail {
-            width: 100%;
-
-            display: block;
-        }
-
-        .project-content {
-            padding: 20px;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .site-header {
-                height: 60px;
-
-                padding: 0 20px;
-            }
-
-            .site-logo {
-                font-size: 15px;
-            }
-
-            .site-nav {
-                gap: 14px;
-            }
-
-            .site-nav a {
-                font-size: 9px;
-                letter-spacing: 1px;
-            }
-
-
-            .interactive-home {
-                min-height: 550px;
-            }
-
-            .head-container {
-                width: 55vw;
-                height: 55vh;
-            }
-
-            .circle-menu {
-                width: 100vw;
-                height: 75vh;
-            }
-
-            .menu-button {
-                width: 125px;
-                height: 48px;
-
-                font-size: 11px;
-                letter-spacing: 1.5px;
-            }
-
-            .menu-button[data-direction="top"] {
-                top: 7%;
-            }
-
-            .menu-button[data-direction="bottom"] {
-                top: 93%;
-            }
-
-            .menu-button[data-direction="top-left"] {
-                left: 10%;
-            }
-
-            .menu-button[data-direction="bottom-left"] {
-                left: 10%;
-            }
-
-            .menu-button[data-direction="top-right"] {
-                left: 90%;
-            }
-
-            .menu-button[data-direction="bottom-right"] {
-                left: 90%;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-    </style>
-
-
-    <!-- =========================
-         THREE.JS IMPORT MAP
-    ========================= -->
-
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
-        }
+<script type="importmap">
+{
+    "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
     }
-    </script>
+}
+</script>
 
 </head>
 
 <body>
 
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
-    <header class="site-header">
+<header class="site-header">
 
-        <a
-            href="#home"
-            class="site-logo">
-            MK
-        </a>
+    <a href="#home" class="site-logo">
+        MK
+    </a>
 
+    <nav class="site-nav">
 
-        <nav class="site-nav">
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#pixel-art">PIXEL ART</a>
+        <a href="#music">MUSIC</a>
+        <a href="#resume">RESUME</a>
+        <a href="#contact">CONTACT</a>
 
-            <a href="#about">
-                ABOUT
-            </a>
+    </nav>
 
-            <a href="#projects">
-                PROJECTS
-            </a>
-
-            <a href="#pixel-art">
-                PIXEL ART
-            </a>
-
-            <a href="#music">
-                MUSIC
-            </a>
-
-            <a href="#resume">
-                RESUME
-            </a>
-
-            <a href="#contact">
-                CONTACT
-            </a>
-
-        </nav>
-
-    </header>
+</header>
 
 
-    <!-- =========================
-         INTERACTIVE HOME
-    ========================= -->
+<!-- =========================
+     INTERACTIVE HOME
+========================= -->
 
-    <section
-        class="interactive-home"
-        id="home">
+<section class="interactive-home" id="home">
 
-        <div class="head-container">
+    <div class="head-container">
 
-            <canvas
-                id="head-canvas">
-            </canvas>
+        <canvas id="head-canvas"></canvas>
 
+    </div>
+
+
+    <div class="circle-menu">
+
+        <!-- ABOUT -->
+
+        <button
+            class="menu-button"
+            data-direction="top"
+            onclick="
+                document
+                .getElementById('about')
+                .scrollIntoView({ behavior: 'smooth' })
+            ">
+            ABOUT ME
+        </button>
+
+
+        <!-- PROJECTS -->
+
+        <button
+            class="menu-button"
+            data-direction="top-right"
+            onclick="
+                document
+                .getElementById('projects')
+                .scrollIntoView({ behavior: 'smooth' })
+            ">
+            PROJECTS
+        </button>
+
+
+        <!-- PIXEL ART -->
+
+        <button
+            class="menu-button"
+            data-direction="bottom-right"
+            onclick="
+                document
+                .getElementById('pixel-art')
+                .scrollIntoView({ behavior: 'smooth' })
+            ">
+            PIXEL ART
+        </button>
+
+
+        <!-- MUSIC -->
+
+        <button
+            class="menu-button"
+            data-direction="bottom"
+            onclick="
+                document
+                .getElementById('music')
+                .scrollIntoView({ behavior: 'smooth' })
+            ">
+            MUSIC
+        </button>
+
+
+        <!-- CONTACT -->
+
+        <button
+            class="menu-button"
+            data-direction="bottom-left"
+            onclick="
+                document
+                .getElementById('contact')
+                .scrollIntoView({ behavior: 'smooth' })
+            ">
+            CONTACT
+        </button>
+
+
+        <!-- RESUME -->
+
+        <button
+            class="menu-button"
+            data-direction="top-left"
+            onclick="
+                document
+                .getElementById('resume')
+                .scrollIntoView({ behavior: 'smooth' })
+            ">
+            RESUME
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="section about-section">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            ABOUT ME
         </div>
-
-
-        <div class="circle-menu">
-
-            <button
-                class="menu-button"
-                data-direction="top"
-                onclick="
-                    document
-                    .getElementById('about')
-                    .scrollIntoView()
-                ">
-                ABOUT ME
-            </button>
-
-
-            <button
-                class="menu-button"
-                data-direction="top-right"
-                onclick="
-                    document
-                    .getElementById('pixel-art')
-                    .scrollIntoView()
-                ">
-                PIXEL ART
-            </button>
-
-
-            <button
-                class="menu-button"
-                data-direction="bottom-right"
-                onclick="
-                    document
-                    .getElementById('music')
-                    .scrollIntoView()
-                ">
-                MUSIC
-            </button>
-
-
-            <button
-                class="menu-button"
-                data-direction="bottom"
-                onclick="
-                    document
-                    .getElementById('contact')
-                    .scrollIntoView()
-                ">
-                CONTACT
-            </button>
-
-
-            <button
-                class="menu-button"
-                data-direction="bottom-left"
-                onclick="
-                    document
-                    .getElementById('projects')
-                    .scrollIntoView()
-                ">
-                PROJECTS
-            </button>
-
-
-            <button
-                class="menu-button"
-                data-direction="top-left"
-                onclick="
-                    document
-                    .getElementById('resume')
-                    .scrollIntoView()
-                ">
-                RESUME
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
-    <section id="about">
 
         <h2>
             About Me
         </h2>
 
+        <div class="about-content">
 
-        <div>
+            <div class="about-image">
 
-            <img
-                src="images/profile.png"
-                alt="Matthew Kin"
-                style="max-width:250px;"
-            >
+                <img
+                    src="images/profile.png"
+                    alt="Matthew Kin">
+
+            </div>
 
 
-            <p>
-                I'm a Computer Science Game Design student at UCSC, passionate about creating engaging and immersive gaming experiences. My skills include programming, game mechanics design, and user experience optimization.
-            </p>
+            <div class="about-text">
+
+                <p>
+                    I'm Matthew Kin, a Computer Science: Game Design student at
+                    UCSC with a passion for creating engaging and interactive game
+                    experiences.
+                </p>
+                
+                <p>
+                    I'm especially interested in the intersection of programming
+                    and game design, focusing on gameplay systems, mechanics, and
+                    player experience. I enjoy figuring out how technical systems
+                    can be turned into interesting mechanics that make games feel
+                    dynamic and rewarding to play.
+                </p>
+                
+                <p>
+                    Through both academic and personal projects, I've gained
+                    experience with programming, gameplay development, and game
+                    design. I'm always looking to build on my technical skills,
+                    experiment with new ideas, and create projects that are both
+                    fun to play and interesting to explore.
+                </p>
+                
+
+
+                <div class="about-skills">
+
+                    <span class="about-skill">
+                        GAME DESIGN
+                    </span>
+
+                    <span class="about-skill">
+                        PROGRAMMING
+                    </span>
+
+                    <span class="about-skill">
+                        GAME AI
+                    </span>
+
+                    <span class="about-skill">
+                        PIXEL ART
+                    </span>
+
+                    <span class="about-skill">
+                        AUDIO DESIGN
+                    </span>
+
+                    <span class="about-skill">
+                        GAMEPLAY SYSTEMS
+                    </span>
+
+                    <span class="about-skill">
+                        UI/UX DESIGN
+                    </span>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         RESUME
-    ========================= -->
+<!-- =========================
+     PROJECTS
+========================= -->
 
-    <section id="resume">
+<section id="projects" class="section projects-section">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            PROJECTS
+        </div>
+
+        <h2>
+            Projects
+        </h2>
+
+        <div class="projects-grid">
+
+
+            <!-- =========================
+                 PROJECT 1
+            ========================= -->
+
+            <div
+                class="project-card"
+                data-href="echoes-of-the-ancient.html"
+                tabindex="0"
+                role="link"
+                aria-label="View Echoes Of The Ancient project">
+
+                <div class="project-image">
+
+                    <img
+                        class="project-thumbnail"
+                        src="images/projects/project1.png"
+                        alt="Echoes Of The Ancient">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-type">
+                        GAME JAM / UNIJAM 2026
+                    </div>
+
+                    <h3>
+                        Echoes Of The Ancient
+                    </h3>
+
+                    <p>
+                        UniJam Summer 2026
+                        <br>
+                        <strong>
+                            3rd Place — Fun & Entertainment
+                        </strong>
+                    </p>
+
+                    <a
+                        class="project-button"
+                        href="echoes-of-the-ancient.html">
+                        VIEW PROJECT
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PROJECT 2
+            ========================= -->
+
+            <div
+                class="project-card"
+                data-href="#"
+                tabindex="0"
+                role="link"
+                aria-label="View Project Two">
+
+                <div class="project-image">
+
+                    <img
+                        class="project-thumbnail"
+                        src="images/projects/project2.png"
+                        alt="Project Two">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-type">
+                        PROJECT
+                    </div>
+
+                    <h3>
+                        Project Two
+                    </h3>
+
+                    <p>
+                        Project description goes here.
+                    </p>
+
+                    <a
+                        class="project-button"
+                        href="#">
+                        VIEW PROJECT
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PROJECT 3
+            ========================= -->
+
+            <div
+                class="project-card"
+                data-href="#"
+                tabindex="0"
+                role="link"
+                aria-label="View Project Three">
+
+                <div class="project-image">
+
+                    <img
+                        class="project-thumbnail"
+                        src="images/projects/project3.png"
+                        alt="Project Three">
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-type">
+                        PROJECT
+                    </div>
+
+                    <h3>
+                        Project Three
+                    </h3>
+
+                    <p>
+                        Project description goes here.
+                    </p>
+
+                    <a
+                        class="project-button"
+                        href="#">
+                        VIEW PROJECT
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PIXEL ART
+========================= -->
+
+<section id="pixel-art" class="section pixel-art-section">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            PIXEL ART
+        </div>
+
+        <h2>
+            Pixel Art
+        </h2>
+
+        <p class="section-description">
+            Pixel art and visual work.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<section id="music" class="section music-section">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            MUSIC
+        </div>
+
+        <h2>
+            Music
+        </h2>
+
+        <p class="section-description">
+            Music and audio projects.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RESUME
+========================= -->
+
+<section id="resume" class="section resume-section">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            RESUME
+        </div>
 
         <h2>
             Resume
         </h2>
 
-
         <div class="resume-container">
 
             <iframe
                 class="resume-frame"
-                src="MatthewKinResume.pdf">
+                src="MatthewKinResume.pdf"
+                title="Matthew Kin Resume">
             </iframe>
-
 
             <div class="resume-buttons">
 
                 <a
+                    class="button"
                     href="MatthewKinResume.pdf"
                     target="_blank">
                     Open Resume
                 </a>
 
-
                 <a
+                    class="button secondary"
                     href="MatthewKinResume.pdf"
                     download>
                     Download Resume
@@ -639,921 +505,740 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         PIXEL ART
-    ========================= -->
+<!-- =========================
+     CONTACT
+========================= -->
 
-    <section id="pixel-art">
+<section id="contact" class="section contact-section">
 
-        <h2>
-            Pixel Art
-        </h2>
+    <div class="section-container">
 
-
-        <p>
-            Pixel art and visual work.
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         PROJECTS
-    ========================= -->
-
-    <section id="projects">
-
-        <h2>
-            Projects
-        </h2>
-
-
-        <div class="projects-grid">
-
-
-            <div
-                class="project-card"
-                onclick="toggleProject(this)">
-
-                <img
-                    class="project-thumbnail"
-                    src="images/projects/project1.png"
-                    alt="Project 1"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Echoes Of The Ancient -
-                        UniJam Summer 2026
-                    </h3>
-
-
-                    <p>
-                        3rd Fun & Entertainment
-                    </p>
-
-
-                    <div class="project-details">
-
-                        <p>
-                            Game jam project focused on
-                            creating an engaging gameplay
-                            experience.
-                        </p>
-
-
-                        <a
-                            href="#"
-                            onclick="event.stopPropagation()">
-                            Play on Itch.io
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="project-card"
-                onclick="toggleProject(this)">
-
-                <img
-                    class="project-thumbnail"
-                    src="images/projects/project2.png"
-                    alt="Project 2"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Project Two
-                    </h3>
-
-
-                    <div class="project-details">
-
-                        <p>
-                            Project description goes here.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="project-card"
-                onclick="toggleProject(this)">
-
-                <img
-                    class="project-thumbnail"
-                    src="images/projects/project3.png"
-                    alt="Project 3"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Project Three
-                    </h3>
-
-
-                    <div class="project-details">
-
-                        <p>
-                            Project description goes here.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="section-label">
+            CONTACT
         </div>
-
-    </section>
-
-
-    <!-- =========================
-         MUSIC
-    ========================= -->
-
-    <section id="music">
-
-        <h2>
-            Music
-        </h2>
-
-
-        <p>
-            Music and audio projects.
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         CONTACT
-    ========================= -->
-
-    <section id="contact">
 
         <h2>
             Contact
         </h2>
 
-
         <p>
-            TODO
+            Feel free to reach out.
         </p>
 
-    </section>
+        <div class="contact-links">
+
+            <a
+                href="https://www.linkedin.com/in/matthew-kin/"
+                target="_blank"
+                rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a
+                href="https://rustvz.itch.io/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Itch.io
+            </a>
+
+            <a
+                href="mailto:mattkin101@gmail.com?subject=Portfolio%20Inquiry">
+                Email
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
-    <footer
-        style="
-            padding:50px 8%;
-            text-align:center;
-        ">
+<footer>
 
-        <p>
-            footer here
-        </p>
+    <p>
+        © 2026 Matthew Kin
+    </p>
 
-    </footer>
+</footer>
 
 
-    <!-- =========================
-         THREE.JS
-    ========================= -->
+<!-- =========================
+     CLICKABLE PROJECT CARDS
+========================= -->
 
-    <script type="module">
+<script>
 
-        import * as THREE from "three";
-
-        import {
-            GLTFLoader
-        } from "three/addons/loaders/GLTFLoader.js";
+    const projectCards =
+        document.querySelectorAll(".project-card");
 
 
-        const canvas =
-            document.getElementById(
-                "head-canvas"
-            );
+    projectCards.forEach(function(card) {
+
+        const destination =
+            card.getAttribute("data-href");
 
 
         /* =========================
-           RENDERER
+           CLICK CARD
         ========================= */
 
-        const renderer =
-            new THREE.WebGLRenderer({
+        card.addEventListener(
+            "click",
+            function(event) {
 
-                canvas: canvas,
+                /*
+                 * If the user clicked the
+                 * VIEW PROJECT link, allow
+                 * the link itself to navigate.
+                 */
 
-                alpha: true,
+                if (
+                    event.target.closest("a")
+                ) {
+                    return;
+                }
 
-                antialias: true
 
-            });
+                /*
+                 * Only navigate if the card
+                 * has a real destination.
+                 */
 
+                if (
+                    destination &&
+                    destination !== "#"
+                ) {
 
-        renderer.setPixelRatio(
+                    window.location.href =
+                        destination;
 
-            Math.min(
-                window.devicePixelRatio,
-                2
-            )
+                }
 
+            }
         );
 
 
         /* =========================
-           SCENE
+           KEYBOARD SUPPORT
         ========================= */
 
-        const scene =
-            new THREE.Scene();
+        card.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
 
 
-        /* =========================
-           ORTHOGRAPHIC CAMERA
-        ========================= */
+                    if (
+                        destination &&
+                        destination !== "#"
+                    ) {
 
-        const camera =
-            new THREE.OrthographicCamera(
+                        window.location.href =
+                            destination;
 
-                -4,
-                4,
-                4,
-                -4,
+                    }
 
-                0.1,
-                100
+                }
 
-            );
-
-
-        camera.position.set(
-            0,
-            0,
-            10
+            }
         );
 
+    });
 
-        camera.lookAt(
-            0,
-            0,
-            0
-        );
+</script>
 
 
-        /* =========================
-           LIGHTING
-        ========================= */
+<!-- =========================
+     THREE.JS
+========================= -->
 
-        const ambientLight =
-            new THREE.AmbientLight(
-                0xffffff,
-                2
-            );
+<script type="module">
 
+    import * as THREE from "three";
 
-        scene.add(
-            ambientLight
-        );
+    import {
+        GLTFLoader
+    } from "three/addons/loaders/GLTFLoader.js";
 
 
-        const keyLight =
-            new THREE.DirectionalLight(
-                0xffffff,
-                3
-            );
+    const canvas =
+        document.getElementById("head-canvas");
 
 
-        keyLight.position.set(
-            3,
+    /* =========================
+       RENDERER
+    ========================= */
+
+    const renderer =
+        new THREE.WebGLRenderer({
+
+            canvas: canvas,
+            alpha: true,
+            antialias: true
+
+        });
+
+
+    renderer.setPixelRatio(
+        Math.min(
+            window.devicePixelRatio,
+            2
+        )
+    );
+
+
+    /* =========================
+       SCENE
+    ========================= */
+
+    const scene =
+        new THREE.Scene();
+
+
+    /* =========================
+       CAMERA
+    ========================= */
+
+    const camera =
+        new THREE.OrthographicCamera(
+            -4,
             4,
-            5
+            4,
+            -4,
+            0.1,
+            100
         );
 
 
-        scene.add(
-            keyLight
-        );
+    camera.position.set(
+        0,
+        0,
+        10
+    );
 
 
-        const fillLight =
-            new THREE.DirectionalLight(
-                0xffffff,
-                1
-            );
+    camera.lookAt(
+        0,
+        0,
+        0
+    );
 
 
-        fillLight.position.set(
-            -3,
-            1,
+    /* =========================
+       LIGHTING
+    ========================= */
+
+    const ambientLight =
+        new THREE.AmbientLight(
+            0xffffff,
             2
         );
 
+    scene.add(
+        ambientLight
+    );
 
-        scene.add(
-            fillLight
+
+    const keyLight =
+        new THREE.DirectionalLight(
+            0xffffff,
+            3
         );
 
+    keyLight.position.set(
+        3,
+        4,
+        5
+    );
 
-        /* =========================
-           CENTER PIVOT
-        ========================= */
-
-        const headPivot =
-            new THREE.Group();
+    scene.add(
+        keyLight
+    );
 
 
-        headPivot.position.set(
-
-            0.2,   // X
-            -16,   // Y
-            0      // Z
-
+    const fillLight =
+        new THREE.DirectionalLight(
+            0xffffff,
+            1
         );
 
+    fillLight.position.set(
+        -3,
+        1,
+        2
+    );
 
-        scene.add(
-            headPivot
-        );
-
-
-        let head = null;
-
-
-        /* =========================
-           ROTATION
-        ========================= */
-
-        const baseRotationY =
-            -Math.PI / 2;
+    scene.add(
+        fillLight
+    );
 
 
-        let targetRotationX = 0;
+    /* =========================
+       HEAD PIVOT
+    ========================= */
 
-        let targetRotationY =
+    const headPivot =
+        new THREE.Group();
+
+
+    headPivot.position.set(
+        0.2,
+        -16,
+        0
+    );
+
+
+    scene.add(
+        headPivot
+    );
+
+
+    let head = null;
+
+
+    /* =========================
+       ROTATION
+    ========================= */
+
+    const baseRotationY =
+        -Math.PI / 2;
+
+
+    let targetRotationX = 0;
+
+
+    let targetRotationY =
+        baseRotationY;
+
+
+    /* =========================
+       LOAD HEAD
+    ========================= */
+
+    const loader =
+        new GLTFLoader();
+
+
+    loader.load(
+
+        "./models/head.glb",
+
+        function(gltf) {
+
+            head =
+                gltf.scene;
+
+
+            const box =
+                new THREE.Box3()
+                    .setFromObject(
+                        head
+                    );
+
+
+            const center =
+                box.getCenter(
+                    new THREE.Vector3()
+                );
+
+
+            head.position.set(
+                -center.x,
+                -center.y,
+                -center.z
+            );
+
+
+            const centeredBox =
+                new THREE.Box3()
+                    .setFromObject(
+                        head
+                    );
+
+
+            const size =
+                centeredBox.getSize(
+                    new THREE.Vector3()
+                );
+
+
+            const maxDimension =
+                Math.max(
+                    size.x,
+                    size.y,
+                    size.z
+                );
+
+
+            const targetSize =
+                8.5;
+
+
+            const modelScale =
+                targetSize /
+                maxDimension;
+
+
+            head.scale.setScalar(
+                modelScale
+            );
+
+
+            head.rotation.set(
+                0,
+                0,
+                0
+            );
+
+
+            headPivot.add(
+                head
+            );
+
+
+            headPivot.rotation.set(
+                0,
+                baseRotationY,
+                0
+            );
+
+        },
+
+        undefined,
+
+        function(error) {
+
+            console.error(
+                "Error loading head.glb:",
+                error
+            );
+
+        }
+
+    );
+
+
+    /* =========================
+       LOOK AT BUTTON
+    ========================= */
+
+    function lookAtButton(button) {
+
+        const buttonRect =
+            button.getBoundingClientRect();
+
+
+        const canvasRect =
+            canvas.getBoundingClientRect();
+
+
+        const buttonX =
+            buttonRect.left +
+            buttonRect.width / 2;
+
+
+        const buttonY =
+            buttonRect.top +
+            buttonRect.height / 2;
+
+
+        const canvasX =
+            canvasRect.left +
+            canvasRect.width / 2;
+
+
+        const canvasY =
+            canvasRect.top +
+            canvasRect.height / 2;
+
+
+        const dx =
+            buttonX -
+            canvasX;
+
+
+        const dy =
+            buttonY -
+            canvasY;
+
+
+        const normalizedX =
+            dx /
+            (canvasRect.width / 2);
+
+
+        const normalizedY =
+            dy /
+            (canvasRect.height / 2);
+
+
+        const maxHorizontalTurn =
+            0.55;
+
+
+        targetRotationY =
+            baseRotationY +
+            normalizedX *
+            maxHorizontalTurn;
+
+
+        const maxVerticalTilt =
+            0.25;
+
+
+        targetRotationX =
+            normalizedY *
+            maxVerticalTilt;
+
+
+        targetRotationY =
+            THREE.MathUtils.clamp(
+
+                targetRotationY,
+
+                baseRotationY -
+                maxHorizontalTurn,
+
+                baseRotationY +
+                maxHorizontalTurn
+
+            );
+
+
+        targetRotationX =
+            THREE.MathUtils.clamp(
+
+                targetRotationX,
+
+                -maxVerticalTilt,
+
+                maxVerticalTilt
+
+            );
+
+    }
+
+
+    /* =========================
+       RESET LOOK
+    ========================= */
+
+    function resetLook() {
+
+        targetRotationX = 0;
+
+        targetRotationY =
             baseRotationY;
 
-
-        /* =========================
-           LOAD HEAD
-        ========================= */
-
-        const loader =
-            new GLTFLoader();
+    }
 
 
-        loader.load(
+    /* =========================
+       BUTTON EVENTS
+    ========================= */
 
-            "./models/head.glb",
-
-
-            function(gltf) {
-
-                head =
-                    gltf.scene;
-
-
-                /* =========================
-                   FIND MODEL CENTER
-                ========================= */
-
-                const box =
-                    new THREE.Box3()
-                        .setFromObject(
-                            head
-                        );
-
-
-                const center =
-                    box.getCenter(
-                        new THREE.Vector3()
-                    );
-
-
-                /*
-                 * Move model so its
-                 * center is at the pivot.
-                 */
-
-                head.position.set(
-
-                    -center.x,
-                    -center.y,
-                    -center.z
-
-                );
-
-
-                /* =========================
-                   MODEL SIZE
-                ========================= */
-
-                const centeredBox =
-                    new THREE.Box3()
-                        .setFromObject(
-                            head
-                        );
-
-
-                const size =
-                    centeredBox.getSize(
-                        new THREE.Vector3()
-                    );
-
-
-                const maxDimension =
-                    Math.max(
-
-                        size.x,
-                        size.y,
-                        size.z
-
-                    );
-
-
-                /*
-                 * CHANGE THIS TO MAKE
-                 * THE HEAD BIGGER/SMALLER.
-                 */
-
-                const targetSize = 8.5;
-
-
-                const modelScale =
-                    targetSize /
-                    maxDimension;
-
-
-                head.scale.setScalar(
-                    modelScale
-                );
-
-
-                /*
-                 * Pivot handles rotation.
-                 */
-
-                head.rotation.set(
-                    0,
-                    0,
-                    0
-                );
-
-
-                headPivot.add(
-                    head
-                );
-
-
-                headPivot.rotation.set(
-
-                    0,
-                    baseRotationY,
-                    0
-
-                );
-
-            },
-
-
-            undefined,
-
-
-            function(error) {
-
-                console.error(
-
-                    "Error loading head.glb:",
-                    error
-
-                );
-
-            }
-
+    const buttons =
+        document.querySelectorAll(
+            ".menu-button"
         );
 
 
-        /* =========================
-           LOOK AT BUTTON
-        ========================= */
+    buttons.forEach(
+        function(button) {
 
-        function lookAtButton(
-            button
+            button.addEventListener(
+                "mouseenter",
+                function() {
+                    lookAtButton(button);
+                }
+            );
+
+
+            button.addEventListener(
+                "focus",
+                function() {
+                    lookAtButton(button);
+                }
+            );
+
+
+            button.addEventListener(
+                "mouseleave",
+                function() {
+                    resetLook();
+                }
+            );
+
+
+            button.addEventListener(
+                "blur",
+                function() {
+                    resetLook();
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================
+       RESPONSIVE CAMERA
+    ========================= */
+
+    function updateCamera() {
+
+        const width =
+            canvas.clientWidth;
+
+
+        const height =
+            canvas.clientHeight;
+
+
+        if (
+            width <= 0 ||
+            height <= 0
         ) {
-
-            const buttonRect =
-                button.getBoundingClientRect();
-
-
-            const canvasRect =
-                canvas.getBoundingClientRect();
-
-
-            const buttonX =
-                buttonRect.left +
-                buttonRect.width / 2;
-
-
-            const buttonY =
-                buttonRect.top +
-                buttonRect.height / 2;
-
-
-            const canvasX =
-                canvasRect.left +
-                canvasRect.width / 2;
-
-
-            const canvasY =
-                canvasRect.top +
-                canvasRect.height / 2;
-
-
-            const dx =
-                buttonX -
-                canvasX;
-
-
-            const dy =
-                buttonY -
-                canvasY;
-
-
-            const normalizedX =
-                dx /
-                (canvasRect.width / 2);
-
-
-            const normalizedY =
-                dy /
-                (canvasRect.height / 2);
-
-
-            /* =========================
-               HORIZONTAL ROTATION
-            ========================= */
-
-            const maxHorizontalTurn =
-                0.55;
-
-
-            /*
-             * Positive X = right
-             * Negative X = left
-             */
-
-            targetRotationY =
-                baseRotationY +
-                normalizedX *
-                maxHorizontalTurn;
-
-
-            /* =========================
-               VERTICAL ROTATION
-            ========================= */
-
-            const maxVerticalTilt =
-                0.35;
-
-
-            targetRotationX =
-                normalizedY *
-                maxVerticalTilt;
-
-
-            /* =========================
-               LIMIT ROTATION
-            ========================= */
-
-            targetRotationY =
-                THREE.MathUtils.clamp(
-
-                    targetRotationY,
-
-                    baseRotationY -
-                        maxHorizontalTurn,
-
-                    baseRotationY +
-                        maxHorizontalTurn
-
-                );
-
-
-            targetRotationX =
-                THREE.MathUtils.clamp(
-
-                    targetRotationX,
-
-                    -maxVerticalTilt,
-
-                    maxVerticalTilt
-
-                );
-
+            return;
         }
 
 
-        /* =========================
-           RESET LOOK
-        ========================= */
-
-        function resetLook() {
-
-            targetRotationX = 0;
-
-            targetRotationY =
-                baseRotationY;
-
-        }
-
-
-        /* =========================
-           BUTTON EVENTS
-        ========================= */
-
-        const buttons =
-            document.querySelectorAll(
-                ".menu-button"
-            );
-
-
-        buttons.forEach(
-
-            function(button) {
-
-                button.addEventListener(
-
-                    "mouseenter",
-
-                    function() {
-
-                        lookAtButton(
-                            button
-                        );
-
-                    }
-
-                );
-
-
-                button.addEventListener(
-
-                    "focus",
-
-                    function() {
-
-                        lookAtButton(
-                            button
-                        );
-
-                    }
-
-                );
-
-
-                button.addEventListener(
-
-                    "mouseleave",
-
-                    function() {
-
-                        resetLook();
-
-                    }
-
-                );
-
-
-                button.addEventListener(
-
-                    "blur",
-
-                    function() {
-
-                        resetLook();
-
-                    }
-
-                );
-
-            }
-
+        renderer.setSize(
+            width,
+            height,
+            false
         );
 
 
-        /* =========================
-           RESPONSIVE CAMERA
-        ========================= */
-
-        function updateCamera() {
-
-            const width =
-                canvas.clientWidth;
+        const aspect =
+            width / height;
 
 
-            const height =
-                canvas.clientHeight;
+        const viewHeight =
+            8;
 
 
-            if (
-
-                width <= 0 ||
-                height <= 0
-
-            ) {
-
-                return;
-
-            }
+        const viewWidth =
+            viewHeight *
+            aspect;
 
 
-            renderer.setSize(
+        camera.left =
+            -viewWidth / 2;
 
-                width,
-                height,
-                false
 
+        camera.right =
+            viewWidth / 2;
+
+
+        camera.top =
+            viewHeight / 2;
+
+
+        camera.bottom =
+            -viewHeight / 2;
+
+
+        const referenceWidth =
+            700;
+
+
+        const referenceHeight =
+            700;
+
+
+        const widthScale =
+            width /
+            referenceWidth;
+
+
+        const heightScale =
+            height /
+            referenceHeight;
+
+
+        const responsiveScale =
+            Math.min(
+                widthScale,
+                heightScale
             );
 
 
-            const aspect =
-                width / height;
+        camera.zoom =
+            THREE.MathUtils.clamp(
+                responsiveScale,
+                0.55,
+                1.15
+            );
 
 
-            const viewHeight = 8;
+        camera.updateProjectionMatrix();
+
+    }
 
 
-            const viewWidth =
-                viewHeight *
-                aspect;
+    window.addEventListener(
+        "resize",
+        updateCamera
+    );
 
 
-            camera.left =
-                -viewWidth / 2;
+    updateCamera();
 
 
-            camera.right =
-                viewWidth / 2;
+    /* =========================
+       ANIMATION
+    ========================= */
 
+    function animate() {
 
-            camera.top =
-                viewHeight / 2;
-
-
-            camera.bottom =
-                -viewHeight / 2;
-
-
-            /* =========================
-               RESPONSIVE SCALING
-            ========================= */
-
-            const referenceWidth = 700;
-
-            const referenceHeight = 700;
-
-
-            const widthScale =
-                width /
-                referenceWidth;
-
-
-            const heightScale =
-                height /
-                referenceHeight;
-
-
-            const responsiveScale =
-                Math.min(
-
-                    widthScale,
-                    heightScale
-
-                );
-
-
-            camera.zoom =
-                THREE.MathUtils.clamp(
-
-                    responsiveScale,
-
-                    0.55,
-                    1.15
-
-                );
-
-
-            camera.updateProjectionMatrix();
-
-        }
-
-
-        /* =========================
-           WINDOW RESIZE
-        ========================= */
-
-        window.addEventListener(
-
-            "resize",
-
-            updateCamera
-
+        requestAnimationFrame(
+            animate
         );
 
 
-        updateCamera();
+        headPivot.rotation.y +=
+            (
+                targetRotationY -
+                headPivot.rotation.y
+            ) * 0.08;
 
 
-        /* =========================
-           ANIMATION
-        ========================= */
-
-        function animate() {
-
-            requestAnimationFrame(
-                animate
-            );
+        headPivot.rotation.x +=
+            (
+                targetRotationX -
+                headPivot.rotation.x
+            ) * 0.08;
 
 
-            if (headPivot) {
+        renderer.render(
+            scene,
+            camera
+        );
 
-                headPivot.rotation.y +=
-
-                    (
-
-                        targetRotationY -
-                        headPivot.rotation.y
-
-                    ) * 0.08;
+    }
 
 
-                headPivot.rotation.x +=
+    animate();
 
-                    (
+</script>
 
-                        targetRotationX -
-                        headPivot.rotation.x
-
-                    ) * 0.08;
-
-            }
-
-
-            renderer.render(
-
-                scene,
-                camera
-
-            );
-
-        }
-
-
-        animate();
-
-    </script>
-
-
-    <!-- =========================
-         PROJECT JAVASCRIPT
-    ========================= -->
-
-    <script>
-
-        function toggleProject(
-            card
-        ) {
-
-            card.classList.toggle(
-                "expanded"
-            );
-
-        }
-
-    </script>
 
 </body>
+
 </html>
