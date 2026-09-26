@@ -4126,3 +4126,1365 @@ footer {
         animation-iteration-count: 1 !important;
     }
 }
+
+/* =========================================================
+   PROJECT SKILLS
+========================================================= */
+
+.project-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+.project-skills .about-skill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   PROJECT BUTTON
+========================================================= */
+
+.project-content .project-button {
+    display: inline-flex;
+    position: relative;
+    z-index: 2;
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .project-skills {
+        margin-top: 16px;
+        margin-bottom: 20px;
+        gap: 6px;
+    }
+
+    .project-content .project-button {
+        margin-top: 4px;
+    }
+
+}
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-section {
+    position: relative;
+}
+
+
+/* =========================================================
+   MUSIC CATEGORY GRID
+========================================================= */
+
+.music-section .section-container {
+    width: 100%;
+}
+
+
+/*
+ * Two-column layout on larger screens.
+ * Automatically becomes one column on smaller screens.
+ */
+
+.music-categories {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        28px;
+
+    width:
+        100%;
+
+    margin:
+        28px auto 0;
+}
+
+
+/* =========================================================
+   MUSIC CATEGORY
+========================================================= */
+
+.music-category {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151A2D,
+            #0F1324
+        );
+
+    border:
+        2px solid #29345A;
+
+    border-radius:
+        5px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.04),
+        0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+/* =========================================================
+   MUSIC CATEGORY HEADER
+========================================================= */
+
+.music-category-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap:
+        12px;
+
+    padding-bottom:
+        10px;
+
+    border-bottom:
+        1px solid rgba(217,217,210,0.16);
+}
+
+
+.music-category-label {
+    margin-bottom:
+        4px;
+
+    color:
+        var(--n64-yellow);
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.5px;
+
+    opacity:
+        0.75;
+}
+
+
+.music-category-header h3 {
+    margin:
+        0;
+
+    color:
+        #E3E3DA;
+
+    font-size:
+        16px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.04em;
+
+    line-height:
+        1.2;
+
+    text-transform:
+        uppercase;
+}
+
+
+.music-category-year {
+    flex-shrink:
+        0;
+
+    color:
+        #8991AD;
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+}
+
+
+/* =========================================================
+   MUSIC TRACKS
+========================================================= */
+
+.music-tracks {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+    margin-top:
+        8px;
+}
+
+
+/* =========================================================
+   MUSIC TRACK
+========================================================= */
+
+.music-track {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        10px;
+
+    min-height:
+        48px;
+
+    padding:
+        7px 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171C30,
+            #111528
+        );
+
+    border:
+        1px solid #29345A;
+
+    border-radius:
+        3px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.03);
+
+    transition:
+        transform 0.12s ease,
+        border-color 0.12s ease,
+        background 0.12s ease;
+}
+
+
+.music-track:hover {
+    transform:
+        translateX(2px);
+
+    border-color:
+        #46598F;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1B2340,
+            #14192D
+        );
+}
+
+
+/* =========================================================
+   TRACK INFO
+========================================================= */
+
+.music-track-info {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    min-width:
+        0;
+
+    flex:
+        1;
+}
+
+
+.music-track-number {
+    width:
+        25px;
+
+    height:
+        25px;
+
+    flex-shrink:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        #8991AD;
+
+    background:
+        #0D1120;
+
+    border:
+        1px solid #35436D;
+
+    border-radius:
+        3px;
+
+    font-size:
+        7px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.05em;
+}
+
+
+.music-track h4 {
+    margin:
+        0 0 2px;
+
+    color:
+        #D9D9D2;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.04em;
+
+    line-height:
+        1.3;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+
+    text-transform:
+        uppercase;
+}
+
+
+.music-track p {
+    margin:
+        0;
+
+    color:
+        #69718B;
+
+    font-size:
+        7px;
+
+    line-height:
+        1.3;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+}
+
+
+/* =========================================================
+   AUDIO PLAYER
+========================================================= */
+
+.music-track audio {
+    width:
+        145px;
+
+    max-width:
+        45%;
+
+    height:
+        28px;
+
+    flex-shrink:
+        0;
+}
+
+
+/* =========================================================
+   TABLET / NARROW DESKTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .music-categories {
+        gap:
+            20px;
+    }
+
+
+    .music-category {
+        padding:
+            15px;
+    }
+
+
+    .music-category-header h3 {
+        font-size:
+            14px;
+    }
+
+
+    .music-track {
+        min-height:
+            46px;
+
+        padding:
+            6px 8px;
+    }
+
+
+    .music-track audio {
+        width:
+            125px;
+
+        max-width:
+            42%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE — ONE COLUMN
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .music-categories {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            28px;
+
+        margin-top:
+            24px;
+    }
+
+
+    .music-category {
+        width:
+            100%;
+
+        padding:
+            14px;
+    }
+
+
+    .music-category-header {
+        padding-bottom:
+            8px;
+    }
+
+
+    .music-category-header h3 {
+        font-size:
+            14px;
+    }
+
+
+    .music-category-label {
+        font-size:
+            7px;
+    }
+
+
+    .music-category-year {
+        font-size:
+            7px;
+    }
+
+
+    .music-tracks {
+        gap:
+            4px;
+
+        margin-top:
+            7px;
+    }
+
+
+    .music-track {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            7px;
+
+        min-height:
+            auto;
+
+        padding:
+            9px;
+    }
+
+
+    .music-track-info {
+        width:
+            100%;
+    }
+
+
+    .music-track-number {
+        width:
+            26px;
+
+        height:
+            26px;
+    }
+
+
+    .music-track h4 {
+        font-size:
+            9px;
+    }
+
+
+    .music-track p {
+        font-size:
+            7px;
+    }
+
+
+    .music-track audio {
+        width:
+            100%;
+
+        max-width:
+            100%;
+
+        height:
+            30px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .music-categories {
+        gap:
+            24px;
+    }
+
+
+    .music-category {
+        padding:
+            12px;
+    }
+
+
+    .music-category-header h3 {
+        font-size:
+            13px;
+    }
+
+
+    .music-track {
+        padding:
+            8px;
+    }
+
+}
+
+/* =========================================================
+   MUSIC SHOW MORE
+========================================================= */
+
+.music-hidden {
+    display: none;
+}
+
+.music-categories.show-all .music-hidden {
+    display: block;
+}
+
+
+/* =========================================================
+   SHOW MORE BUTTON
+========================================================= */
+
+.music-show-more {
+    display: block;
+
+    margin: 28px auto 0;
+
+    padding: 10px 24px;
+
+    color: #D9D9D2;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171C30,
+            #111528
+        );
+
+    border: 1px solid #35436D;
+
+    border-radius: 3px;
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.12em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.12s ease,
+        border-color 0.12s ease,
+        transform 0.12s ease;
+}
+
+
+.music-show-more:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #1B2340,
+            #14192D
+        );
+
+    border-color:
+        #46598F;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.music-show-more:active {
+    transform:
+        translateY(1px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .music-show-more {
+        margin-top: 24px;
+
+        padding: 9px 20px;
+
+        font-size: 7px;
+    }
+
+}
+
+/* =========================================================
+   PIXEL ART
+   ========================================================= */
+
+   .pixel-art-section {
+    position: relative;
+}
+
+.pixel-art-section .section-container {
+    max-width: 1200px;
+}
+
+.pixel-art-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 42px;
+}
+
+
+/* =========================================================
+   PIXEL ART CARD
+   ========================================================= */
+
+.pixel-art-card {
+    position: relative;
+    display: block;
+
+    overflow: hidden;
+
+    background: #11152A;
+    border: 2px solid #303652;
+    border-radius: 8px;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.pixel-art-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #7B8FE8;
+
+    box-shadow:
+        0 8px 0 rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(123, 143, 232, 0.15);
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.pixel-art-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171B32,
+            #0D1020
+        );
+
+    border-bottom: 2px solid #303652;
+}
+
+.pixel-art-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+
+    transition: transform 0.25s ease;
+}
+
+.pixel-art-card:hover .pixel-art-image img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   INFO
+   ========================================================= */
+
+.pixel-art-info {
+    padding: 24px;
+}
+
+.pixel-art-type {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    font-family: monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+
+    color: #8FA2FF;
+}
+
+.pixel-art-info h3 {
+    margin: 0 0 10px;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    color: #E7E8E1;
+}
+
+.pixel-art-info p {
+    margin: 0;
+
+    color: #969AAA;
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   VIEW COLLECTION
+   ========================================================= */
+
+.pixel-art-link {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    color: #D9D9D2;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pixel-art-card:hover .pixel-art-link {
+    color: #8FA2FF;
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CRT DETAIL
+   ========================================================= */
+
+.pixel-art-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.025) 0px,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .pixel-art-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .pixel-art-info {
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .pixel-art-grid {
+        margin-top: 28px;
+    }
+
+    .pixel-art-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .pixel-art-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .pixel-art-info p {
+        font-size: 0.85rem;
+    }
+
+}
+
+/* =========================================================
+   ANIMATED SPRITES PAGE
+   ========================================================= */
+
+   .pixel-gallery-section {
+    position: relative;
+}
+
+.pixel-gallery-section .section-container {
+    max-width: 1200px;
+}
+
+
+/* =========================================================
+   BACK LINK
+   ========================================================= */
+
+.pixel-gallery-back {
+    display: inline-block;
+
+    margin-bottom: 36px;
+
+    color: #8FA2FF;
+
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pixel-gallery-back:hover {
+    color: #D9D9D2;
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+.pixel-gallery-section h1 {
+    margin: 0 0 16px;
+
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: 1;
+
+    color: #E7E8E1;
+}
+
+.pixel-gallery-section .section-description {
+    max-width: 700px;
+}
+
+
+/* =========================================================
+   ANIMATED SPRITE GRID
+   ========================================================= */
+
+.animated-sprite-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+
+    margin-top: 48px;
+}
+
+
+/* =========================================================
+   SPRITE CARD
+   ========================================================= */
+
+.animated-sprite-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #11152A;
+
+    border: 2px solid #303652;
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.animated-sprite-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #7B8FE8;
+
+    box-shadow:
+        0 8px 0 rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(123, 143, 232, 0.15);
+}
+
+
+/* =========================================================
+   SPRITE PREVIEW
+   ========================================================= */
+
+.animated-sprite-preview {
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171B32,
+            #0D1020
+        );
+
+    border-bottom: 2px solid #303652;
+}
+
+.animated-sprite-preview img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+
+    transition: transform 0.25s ease;
+}
+
+.animated-sprite-card:hover
+.animated-sprite-preview img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   SPRITE INFORMATION
+   ========================================================= */
+
+.animated-sprite-info {
+    padding: 24px;
+}
+
+.animated-sprite-type {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: #8FA2FF;
+
+    font-family: monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.animated-sprite-info h2 {
+    margin: 0 0 10px;
+
+    color: #E7E8E1;
+
+    font-size: 1.35rem;
+}
+
+.animated-sprite-info p {
+    margin: 0;
+
+    color: #969AAA;
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CRT SCANLINES
+   ========================================================= */
+
+.animated-sprite-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.025) 0px,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #696D80;
+
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .animated-sprite-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin-top: 36px;
+    }
+
+    .animated-sprite-info {
+        padding: 20px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .pixel-gallery-back {
+        margin-bottom: 28px;
+    }
+
+    .pixel-gallery-section h1 {
+        font-size: 2.4rem;
+    }
+
+    .pixel-gallery-section .section-description {
+        font-size: 0.9rem;
+    }
+
+    .animated-sprite-preview {
+        aspect-ratio: 4 / 3;
+    }
+
+    .animated-sprite-info h2 {
+        font-size: 1.15rem;
+    }
+
+    .animated-sprite-info p {
+        font-size: 0.85rem;
+    }
+
+}
+
+/* =========================================================
+   ANIMATED SPRITES PAGE
+   ========================================================= */
+
+   .pixel-gallery-section {
+    position: relative;
+}
+
+.pixel-gallery-section .section-container {
+    max-width: 1200px;
+}
+
+
+/* =========================================================
+   BACK LINK
+   ========================================================= */
+
+.pixel-gallery-back {
+    display: inline-block;
+
+    margin-bottom: 36px;
+
+    color: #8FA2FF;
+
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pixel-gallery-back:hover {
+    color: #D9D9D2;
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.pixel-gallery-section h1 {
+    margin: 0 0 16px;
+
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: 1;
+
+    color: #E7E8E1;
+}
+
+.pixel-gallery-section .section-description {
+    max-width: 700px;
+}
+
+
+/* =========================================================
+   SPRITE LIST
+   ========================================================= */
+
+.animated-sprite-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    margin-top: 48px;
+}
+
+
+/* =========================================================
+   SPRITE
+   ========================================================= */
+
+.animated-sprite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 260px;
+
+    padding: 24px;
+
+    background: #11152A;
+
+    border: 2px solid #303652;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.animated-sprite:hover {
+    transform: translateY(-4px);
+
+    border-color: #7B8FE8;
+
+    box-shadow:
+        0 8px 0 rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(123, 143, 232, 0.15);
+}
+
+.animated-sprite img {
+    max-width: 100%;
+    max-height: 240px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .animated-sprite-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .animated-sprite-list {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 32px;
+    }
+
+    .animated-sprite {
+        min-height: 240px;
+    }
+
+}
